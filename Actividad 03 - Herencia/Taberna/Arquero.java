@@ -1,6 +1,6 @@
 package Taberna;
 
-public class Arquero extends Aventurero{
+public class Arquero extends Aventurero {
     // Clase Hija-Arquero
     private int flechas = 30;
 

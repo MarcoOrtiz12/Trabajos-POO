@@ -1,4 +1,4 @@
-// package Mobs;
+package Mobs;
 
 public abstract class Mob {
     // Atributos

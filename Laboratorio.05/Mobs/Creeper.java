@@ -1,4 +1,4 @@
-// package Mobs;
+package Mobs;
 
 public class Creeper extends Mob {
     Creeper() {

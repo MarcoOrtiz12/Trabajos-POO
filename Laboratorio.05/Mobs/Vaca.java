@@ -1,4 +1,4 @@
-// package Mobs;
+package Mobs;
 
 public class Vaca extends Mob {
     public Vaca() {

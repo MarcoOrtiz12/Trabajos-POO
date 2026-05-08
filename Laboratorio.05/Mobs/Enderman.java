@@ -1,3 +1,5 @@
+package Mobs;
+
 public class Enderman extends Mob {
     public Enderman() {
         super(

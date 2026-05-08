@@ -1,3 +1,5 @@
+package Mobs;
+
 public class Lobo extends Mob {
     public Lobo() {
         super(

@@ -5,25 +5,45 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class LeerArchivos {
+
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
-        // Comenzamos pidiendo el nombre del archivo 
-        System.out.print("Ingresa el nombre del archivo: " );
-        String nombreArchivo = sc.nextLine();
         Scanner lector = null;
-        // Intentamos correr el programa
         try {
+            // Aqui solicitamos el archivo
+            System.out.print("Ingresa el nombre del archivo: ");
+            String nombreArchivo = sc.nextLine();
+
             File archivo = new File(nombreArchivo);
             lector = new Scanner(archivo);
-            System.out.println("\nContenido del archivo:");
-            // Ciclo while
+
+            System.out.println("\nContenido del archivo:\n");
+
+            int contadorLineas = 0;
+
+            // Lectura
             while (lector.hasNextLine()) {
+                String linea = lector.nextLine();
+                System.out.println(linea);
+                contadorLineas++;
             }
+            if (contadorLineas == 0) {
+                System.out.println("El archivo está vacío.");
+            } else {
+                System.out.println("\nTotal de líneas leídas: " + contadorLineas);
+            }
+
         } catch (FileNotFoundException e) {
-            System.out.println("El archivo no existe...");
+            System.out.println("Error: El archivo no fue encontrado. Verifica el nombre o la ruta");
+
         } finally {
-            System.out.println("Intento de lectura finalizado");
+            // Cierre
+            if (lector != null) {
+                lector.close();
+            }
+            sc.close();
+            System.out.println("\nIntento de lectura finalizado");
         }
-        sc.close();
     }
 }
